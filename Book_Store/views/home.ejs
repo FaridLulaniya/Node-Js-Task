@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a class="brand" href="/">
+                <span class="brand-icon"></span>
+                <span class="brand-text">Book Store</span>
+            </a>
+
+            <!-- Hamburger (mobile) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+            <label for="nav-toggle" class="hamburger" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a class="active" href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <button class="dropbtn">
+                            Categories
+                            <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true">
+                                <path d="M5 7l5 6 5-6H5z" />
+                            </svg>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="/books?category=Fiction">Fiction</a></li>
+                            <li><a href="/books?category=Non-Fiction">Non-Fiction</a></li>
+                            <li><a href="/books?category=Self-Help">Self-Help</a></li>
+                            <li><a href="/books?category=Business">Business</a></li>
+                            <li><a href="/books?category=Technology">Technology</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="nav-search" action="/books" method="GET">
+                    <input type="text" name="q" placeholder="Search books..."
+                        value="<%= typeof q !== 'undefined' ? q : '' %>" aria-label="Search books">
+                    <button type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <h2>All Books</h2>
+    <div class="book-grid">
+
+        <%DBData.forEach((val,i)=>{%>
+            <div class="book-card">
+                <div class="book-img">
+                    <img src="<%= val.image %>" alt="<%= val.title %>">
+                </div>
+                <div class="book-body">
+                    <h3 class="book-title">
+                        <%= val.title %>
+                    </h3>
+
+                    <p class="book-author">By <%= val.author %>
+                    </p>
+
+                    <p class="book-category">
+                        <%= val.category %>
+                    </p>
+
+                    <p class="book-price">₹<%= val.price %>
+                    </p>
+
+                    <p class="book-desc">
+                        <%= val.description.split(" ").slice(0, 10).join(" ") %>
+                          <% if (val.description.split(" ").length > 10) { %>...
+                         <% } %>
+                     </p>
+            </div>
+            <div class=" book-actions">
+                            <a href="/" class="btn btn-view">Buy now</a>
+                </div>
+            </div>
+
+            <% })%>
+
+</body>
+
+</html>

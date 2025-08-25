@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: hsl(239, 69%, 56%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            margin: 2%;
+            background: #ffffff3d;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            width: 400px;
+            max-width: 95%;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #14003b;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #ffffff;
+            font-weight: bold;
+
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out;
+            background-color: #ffffff55;
+
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+            outline: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder,
+        .form-group select::placeholder {
+            color: rgb(0, 0, 0);
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .img-preview {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #bbb;
+            border-radius: 10px;
+            height: 180px;
+            margin-top: 10px;
+            background-color: #ffffff55;
+        }
+
+        .img-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .submit-btn {
+            width: 40%;
+            padding: 12px;
+            border: none;
+            background: #250e89;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .cancel {
+            background-color: black;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Add Book</h2>
+        <form method="post" action="/addNewBookData">
+            <div class="form-group">
+                <label>Book Title</label>
+                <input type="text" name="title" placeholder="Enter book title" required>
+            </div>
+
+            <div class="form-group">
+                <label>Author</label>
+                <input type="text" name="author" placeholder="Enter author name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select required name="category">
+                    <option value="" disabled selected>Select category</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="science">Science</option>
+                    <option value="biography">Biography</option>
+                    <option value="history">History</option>
+                    <option value="technology">Technology</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" name="price" placeholder="Enter price" required>
+            </div>
+
+            <div class="form-group">
+                <label>Image URL</label>
+                <input type="url" name="image" id="imageURL" placeholder="Paste image link" oninput="previewImage()">
+                <div class="img-preview" id="imgPreview">
+                    <span style="color:#777;">Image preview will appear here</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea placeholder="Enter description" name="description" required></textarea>
+            </div>
+            <div class="btn-group">
+                <button type="submit" class="submit-btn cancel">Cancel</button>
+                <button type="submit" class="submit-btn">Add Book</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function previewImage() {
+            const url = document.getElementById('imageURL').value;
+            const preview = document.getElementById('imgPreview');
+            preview.innerHTML = url ? `<img src="${url}" alt="Book Image">`
+                : `<span style="color:#777;">Image preview will appear here</span>`;
+        }
+    </script>
+</body>
+
+</html>

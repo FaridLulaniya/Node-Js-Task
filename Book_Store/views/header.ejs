@@ -1,0 +1,40 @@
+<header class="site-header">
+  <div class="nav-container">
+    <a class="brand" href="/books">
+      <span class="brand-icon">📚</span>
+      <span class="brand-text">Book Store</span>
+    </a>
+
+    <!-- Hamburger (mobile) -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a class="<%= path === '/books' ? 'active' : '' %>" href="/books">Home</a></li>
+        <li><a class="<%= path.startsWith('/books/add') ? 'active' : '' %>" href="/books/add">Add Book</a></li>
+
+        <li class="dropdown">
+          <button class="dropbtn">
+            Categories
+            <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 7l5 6 5-6H5z"/></svg>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/books?category=Fiction">Fiction</a></li>
+            <li><a href="/books?category=Non-Fiction">Non-Fiction</a></li>
+            <li><a href="/books?category=Self-Help">Self-Help</a></li>
+            <li><a href="/books?category=Business">Business</a></li>
+            <li><a href="/books?category=Technology">Technology</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <form class="nav-search" action="/books" method="GET">
+        <input type="text" name="q" placeholder="Search books..." value="<%= typeof q !== 'undefined' ? q : '' %>" aria-label="Search books">
+        <button type="submit">Search</button>
+      </form>
+    </nav>
+  </div>
+</header>

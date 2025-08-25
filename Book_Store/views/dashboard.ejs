@@ -1,0 +1,179 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .add-btn {
+            background-color: #6366F1;
+        }
+
+        .dashboard {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        thead {
+            background: #2c3e50;
+            color: #fff;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            vertical-align: middle;
+        }
+
+        tbody tr:hover {
+            background: #f1f1f1;
+        }
+
+        img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* 🔑 Fix for description column */
+        td.description {
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .actions {
+            height: 100% !important;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .actions a {
+            text-decoration: none;
+        }
+
+        .actions button {
+            cursor: pointer;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .edit-btn {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .edit-btn:hover {
+            background: #2980b9;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a class="brand" href="/">
+                <span class="brand-icon"></span>
+                <span class="brand-text">Book Store</span>
+            </a>
+
+            <!-- Hamburger (mobile) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+            <label for="nav-toggle" class="hamburger" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/addBookForm" class="btn add-btn">+ Add New Book</a></li>
+                </ul>
+
+                <form class="nav-search" action="/books" method="GET">
+                    <input type="text" name="q" placeholder="Search books..."
+                        value="<%= typeof q !== 'undefined' ? q : '' %>" aria-label="Search books">
+                    <button type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <h2>📚 Book Dashboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bookDetails.forEach((val,i)=>{ %>
+                    <tr>
+                        <td><img src="<%=val.image%>" alt="Book"></td>
+                        <td>
+                            <%=val.title%>
+                        </td>
+                        <td>
+                            <%=val.author%>
+                        </td>
+                        <td>
+                            <%=val.category%>
+                        </td>
+                        <td>₹ <%=val.price%>
+                        </td>
+                        <td class="description" title="<%=val.description%>">
+                            <%=val.description%>
+                        </td>
+                        <td class="actions">
+                            <a href="/editBook/<%=val.id%>"><button class="edit-btn">Edit</button></a>
+                            <a href="/deleteBook/<%=val.id%>"><button class="delete-btn">Delete</button></a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
