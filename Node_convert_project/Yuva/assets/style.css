@@ -1,0 +1,313 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+
+}
+
+.main_img_div {
+    background-image: url("https://www.navneetstore.com/cdn/shop/files/main-banner_youva_revised.jpg?format=pjpg&v=1685428134&width=1000");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin: 0;
+    font-family: sans-serif;
+    text-shadow: 2px 0px 20px #000;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding: 8px;
+}
+
+nav .logo {
+    width: 10%;
+    height: 100%;
+    color: yellow;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+nav .links {
+    width: 30%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+
+}
+
+nav .links ul {
+    list-style: none;
+    display: flex;
+    gap: 10%;
+    height: 100%;
+    align-items: center;
+}
+
+nav .links ul li {
+    display: flex;
+    height: 100%;
+}
+
+a {
+    display: flex;
+    height: 100%;
+    text-decoration: none;
+}
+
+.content {
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.content p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.main_div {
+    /* border: 1px solid black; */
+    width: 100%;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contenar1 {
+    width: 100%;
+    max-width: 550px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.sectionTitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #403c3c !important;
+    display: inline-block;
+    letter-spacing: 5px;
+    background-image: url(http://youvaworld.com/wp-content/themes/Youva/images/titleBg.jpg);
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    background-position-y: 5px;
+    background-position: center 6px;
+    font-weight: 700;
+}
+
+.contenar1 p {
+    font-size: 0.9rem;
+    font-family: sans-serif;
+    color: gray;
+    line-height: 1.6;
+    text-wrap: wrap;
+}
+
+.contenar1 h1 {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    border-left: 5px solid rgb(240, 184, 79);
+    color: #403c3c;
+    padding-left: 10px;
+}
+
+.round_div {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    /* margin-top: 20px; */
+    float: right;
+    margin-right: 15px;
+}
+
+.round_div img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.core-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.core-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.core-section p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-card {
+    padding: 15px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.about,
+.offer {
+    padding: 40px;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 300px;
+}
+
+.about {
+    background-color: #1a1a1ac7;
+    color: white;
+}
+
+.offer {
+    background-color: #d4c200d4;
+    color: white;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0 0 10px;
+}
+
+.underline {
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.offer .underline {
+    background-color: white;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.offer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.offer ul li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.offer ul li i {
+    color: white;
+    margin-right: 10px;
+}
+
+.offer ul li::before {
+    content: "✔";
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    .main_div {
+        flex-direction: column;
+    }
+
+    .contenar1,
+    .contenar2 {
+        max-width: 100%;
+    }
+
+    .contenar1 h1 {
+        font-size: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p,
+    .offer ul li {
+        font-size: 16px;
+    }
+
+    .about,
+    .offer {
+        padding: 20px;
+    }
+
+    .round_div {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    p,
+    .offer ul li {
+        font-size: 14px;
+    }
+
+    .about,
+    .offer {
+        padding: 15px;
+    }
+
+    .round_div {
+        margin-right: 0px;
+    }
+}

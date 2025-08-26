@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            text-decoration: none;
+
+            background-color: #f8f9fa;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: black;
+            padding: 8px;
+        }
+
+        nav .logo {
+            width: 10%;
+            height: 100%;
+            color: yellow;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        nav .links {
+            width: 30%;
+            height: 100%;
+            align-items: center;
+            display: flex;
+
+        }
+
+        nav .links ul {
+            list-style: none;
+            display: flex;
+            gap: 10%;
+            height: 100%;
+            align-items: center;
+        }
+
+        nav .links ul li {
+            display: flex;
+            height: 100%;
+        }
+
+        a {
+            display: flex;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .contact-form,
+        .support-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: #005eff;
+            /* border: none; */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            color: #005eff;
+        }
+
+        .contact-section {
+            position: relative;
+            text-align: left;
+            color: #000;
+            width: 100%;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: auto;
+            /* border-radius: 10px; */
+            margin-top: 20px;
+            height: 300px;
+        }
+
+        .contact-images img {
+            width: 100%;
+            /* height: auto; */
+            /* border-radius: 10px; */
+            margin-top: 20px;
+            height: 450px;
+            margin-bottom: 50px;
+        }
+
+        .contact-text {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            font-weight: bold;
+            color: #212529;
+        }
+
+        @media (max-width: 768px) {
+            .contact-text {
+                font-size: 1.5rem;
+                left: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Youva</div>
+        <div class="links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+
+        <div class="contact-section">
+            <div class="contact-image">
+                <img src="./contect.png" alt="Contact Us">
+            </div>
+            <!-- <div class="contact-text">CONTACT US</div> -->
+        </div>
+        <div class="container">
+            <div class="row  mt-5 mx-auto">
+                <!-- Contact Form -->
+                <div class="col-md-6 mb-4">
+                    <div class="contact-form">
+                        <h3 class="mb-4">GET IN TOUCH</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">NAME</label>
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">EMAIL*</label>
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">MESSAGE</label>
+                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Support Info -->
+                <div class="col-md-6">
+                    <div class="support-info">
+                        <h3 class="mb-4">SUPPORT</h3>
+                        <p><strong>Phone</strong><br><br>
+                            <a href="tel:8657803385" class="text-decoration-none">8657803385</a><br>
+                            <a href="tel:07966305000" class="text-decoration-none">079-66305000</a>
+                        </p>
+                        <hr>
+                        <p><strong>Email</strong><br><br>
+                            <a href="mailto:customercare@navneet.com"
+                                class="text-decoration-none">customercare@navneet.com</a>
+                        </p>
+                        <hr>
+                        <p><strong>Address</strong><br><br>
+                            Navneet Bhavan, Bhavani Shankar Rd, Dadar West, Mumbai, Maharashtra 400028
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-images" style="margin-bottom: 30px;">
+                <img src="./backgrund.png" alt="Contact Us">
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
